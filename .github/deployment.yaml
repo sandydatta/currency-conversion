@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currency-conversion
+  labels:
+    app: currency-conversion
+
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: currency-conversion
+    template:
+      metadata:
+        labels:
+          app: currency-conversion
+      spec:
+        containers:
+          - name: currency-conversion
+            image: 249021670791.dkr.ecr.ap-south-1.amazonaws.com/sandylearning:1.1
+            ports:
+              - containerPort: 8100
+
