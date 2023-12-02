@@ -51,7 +51,6 @@ jobs:
 
       - name: Deploy to Amazon EKS
         id: deploy-to-eks
-        uses: aws-actions/amazon-eks-deploy@v1
         run: |
             kubectl apply -f .github/deployment.yaml
             kubectl apply -f .github/service.yaml
