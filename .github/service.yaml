@@ -1,7 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Service
 metadata:
   name: currency-conversion
+  labels:
+    app: currency-conversion
 spec:
   selector:
     app: currency-conversion
